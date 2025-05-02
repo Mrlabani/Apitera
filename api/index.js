@@ -1,6 +1,6 @@
-import axios from 'axios';
+const axios = require('axios');
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   const { url } = req.query;
 
   if (!url) {
@@ -26,4 +26,4 @@ export default async function handler(req, res) {
   } catch (error) {
     return res.status(500).json({ error: 'Error fetching link', details: error.message });
   }
-}
+};
